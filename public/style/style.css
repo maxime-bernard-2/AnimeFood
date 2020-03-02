@@ -1,0 +1,81 @@
+body {
+    background-color: #36366d;
+    font-family: 'Quicksand';
+    margin: 0rem;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    height: 3rem;
+    width: 100%;
+    background-color: #242448;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin-bottom: 5rem;
+}
+
+#titleHeader {
+    margin: 0;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+
+#buttonsHeader {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.buttonHeader {
+    background-color: #36366d;
+    display: flex;
+    justify-content: center;
+    width: 4rem;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    border-radius: 0.4rem;
+}
+
+#cases {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.case {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 20rem;
+    background-color: #242448;
+    border-radius: 0.5rem;
+}
+
+.imgCase {
+    border-radius: 0.5rem;
+    width: 20rem;
+    height: 11rem;
+    z-index: 1;
+}
+
+.txtCase {
+    position: absolute;
+    margin-left: 0.5rem;
+    margin-top: -10rem;
+    z-index: 2;
+    background-color: rgba(54, 54, 109, 0.77);
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.titleCase {
+    margin: 0;
+    padding: 0.5rem;
+}
