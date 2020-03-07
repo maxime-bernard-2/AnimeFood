@@ -1,12 +1,6 @@
-<?php
-
-ob_start()
-
-?>
-
     <div id="receipe">
         <div id="imageOrigin">
-            <img src="public/image/food.jpg">
+            <img src="public/image/food.png">
             <p>Food War</p>
         </div>
 
@@ -16,7 +10,7 @@ ob_start()
             <p>Nb Personnes</p>
         </div>
 
-        <div id="receipIngredient">
+        <div id="receipeIngredients">
             <p>gghrthrhrhrnnnr</p>
             <p>gghrthrhrhrnnnr</p>
             <p>gghrthrhrhrnnnr</p>
@@ -28,8 +22,3 @@ ob_start()
             <p>3. gghrthrhrhrnnnr</p>
         </div>
     </div>
-
-<?php
-
-$content = ob_get_clean();
-require 'template.php';
