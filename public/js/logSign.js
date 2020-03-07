@@ -3,7 +3,7 @@ let logSignStatus = "open";
 (function () {
     "use strict";
     $(document).ready(() => {
-        console.log("Script actif !");
+        console.warn("Script logSign actif !");
 
         $("#log").click(function() {
             if(logSignStatus === "open") {
