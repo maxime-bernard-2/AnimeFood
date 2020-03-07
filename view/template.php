@@ -11,12 +11,24 @@
         <header>
             <p id="titleHeader">AnimeFood</p>
             <div id="buttonsHeader">
-                <p class="buttonHeader">LogIn</p>
-                <p class="buttonHeader">SignUp</p>
+                <p class="buttonHeader" id="log">LogIn</p>
+                <p class="buttonHeader" id="sign">SignUp</p>
             </div>
         </header>
 
-        <?php echo $content ?>
+        <div id="content">
+            <?php echo $content ?>
+        </div>
 
+        <div id="logSign">
+            <h2>Connexion</h2>
+            <form method="post" action="#">
+                <input type="text" placeholder="Pseudo">
+                <input type="password" placeholder="Password">
+                <input type="submit" content="Submit">
+            </form>
+        </div>
+
+        <script src="public/js/logSign.js"></script>
     </body>
 </html>
