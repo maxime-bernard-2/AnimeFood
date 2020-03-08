@@ -1,11 +1,8 @@
 <?php
 session_start();
 
-$idUser = 0;
-
 $obj = new stdClass();
 $obj->success = false;
-$obj->message = "Mauvais identifiant ou mot de passe";
 
 try {
     $dsn = 'mysql:host=localhost;dbname=animefood';
@@ -14,18 +11,23 @@ try {
     die('Erreur : ' . $e->getMessage()); // pas sécurisé
 }
 
-if(!empty($_POST['username']) && !empty($_POST['password'])) {
+if(!empty($_POST['recetteId'])) {
 
-    $reponse = $bdd->prepare('SELECT * FROM user WHERE username = :username AND password = :password');
+    $reponse = $bdd->prepare('SELECT * FROM recette WHERE recette_id = :recetteId');
 
-    $reponse->execute(array(':username' => $_POST['username'], ':password' => $_POST['password']));
+    $reponse->execute(array(':recetteId' => $_POST['recetteId']));
     $results = $reponse->fetchAll();
 
     if ($reponse->rowCount() > 0) {
-        $obj->success =true;
+        foreach ($results as $row) {
+            $recette = new class {};
 
-        foreach ($results as $rows) {
-            $_SESSION['user'] = $rows["user_id"];
+            $recette->recetteId = $row['recette_id'];
+            $recette->name = $row['name'];
+            $recette->imageLink = $row['image_link'];
+            $recette->origin = $row['origin'];
+
+            $obj->recette[] = $recette;
         }
     }
 }

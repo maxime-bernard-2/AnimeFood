@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    $(document).ready(() => {
+    $(() => {
         console.warn("Script main actif !");
 
         $.ajax({
@@ -10,8 +10,6 @@
             if (data) {
                 $('#log').css('display', 'none');
                 $('#sign').css('display', 'none');
-                // $('.buttonHeader').remove();
-                // $('#buttonsHeader').append('<p class="buttonHeader" id="deco">LogOut</p>')
             } else {
                 $('#deco').css('display', 'none');
             }
@@ -19,13 +17,31 @@
             console.log('Connexion impossible !');
         });
 
-        $(".case").click(function() {
+        $.ajax({
+            url: 'model/loadMainPage.php',
+            method: 'get'
+        }).done(function (data) {
+            if(data.success === true) {
+                data.recette.forEach((item) => {
+                    $('#cases').append(
+                        $('<div class="case"> ' +
+                            '<div class="headCase"> ' +
+                                '<img class="imgCase" src="' + item.imageLink + '"> ' +
+                                '<p class="txtCase">' + item.origin + '</p> ' +
+                            '</div> <p class="titleCase">' + item.name + '</p> ' +
+                        '</div>').data('recetteId', item.recetteId));
+                })
 
-            $("#cases").fadeTo('fast', 0, function() {
-                console.log("End Fading !!!");
-                $("#content").load("view/receipe_vue.php");
-            });
-        })
+                $(".case").click(function() {
+                    console.log($(this).data('recetteId'));
+                })
+
+            } else {
+                console.log('oops');
+            }
+        }).fail(function () {
+            console.error('Une erreur critique est arrivée.');
+        });
 
     });
 }) ();

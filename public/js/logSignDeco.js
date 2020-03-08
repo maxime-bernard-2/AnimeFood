@@ -2,7 +2,7 @@ let logSignStatus = "open";
 
 (function () {
     "use strict";
-    $(document).ready(() => {
+    $(() => {
         console.warn("Script logSignDeco actif !");
 
         $("#log").click(function() {
@@ -28,7 +28,7 @@ let logSignStatus = "open";
         })
 
         $('#logForm').submit(function () {
-            let self = $(this); // resout probleme de contexte de done
+            let self = $(this);
             $.ajax({
                 url : $(this).attr('action'),
                 method : $(this).attr('method'),
@@ -36,13 +36,13 @@ let logSignStatus = "open";
             }).done(function (data) {
                 if(data.success === true) {
                     window.location.href = 'index.php';
-                } else { // data.success === false
+                } else {
                     $('#message').text(data.message);
                 }
             }).fail(function () {
                 console.error('Une erreur critique est arrivée.');
             });
-            return false; // bloque envoi formulaire automatique
+            return false;
         });
 
     });
