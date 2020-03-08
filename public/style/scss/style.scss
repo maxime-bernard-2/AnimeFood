@@ -28,16 +28,16 @@ body {
       justify-content: space-around;
       align-items: center;
       margin-right: 1rem;
-    }
 
-    .buttonHeader {
-      background-color: #36366d;
-      display: flex;
-      justify-content: center;
-      width: 4rem;
-      padding: 0.5rem;
-      margin-left: 1rem;
-      border-radius: 0.4rem;
+      .buttonHeader {
+        background-color: #36366d;
+        display: flex;
+        justify-content: center;
+        width: 4rem;
+        padding: 0.5rem;
+        margin-left: 1rem;
+        border-radius: 0.4rem;
+      }
     }
   }
 
@@ -56,6 +56,11 @@ body {
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
     transition-duration: 0.5s;
+
+    #message {
+      color: red;
+      font-size: 0.9rem;
+    }
 
     form {
       display: flex;
