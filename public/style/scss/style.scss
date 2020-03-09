@@ -9,13 +9,13 @@ body {
   flex-direction: column;
 
   header {
-    height: 3rem;
+    height: 3.2rem;
     width: 100%;
     background-color: #242448;
     justify-content: space-between;
     align-items: center;
     display: flex;
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
 
     #titleHeader {
       margin: 0;
@@ -43,7 +43,7 @@ body {
 
   #logSign {
     width: 18rem;
-    height: 30rem;
+    height: 25rem;
     position: fixed;
     top: 5rem;
     right: -18rem;
@@ -52,7 +52,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #242448;
-    z-index: 2;
+    z-index: 10;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
     transition-duration: 0.5s;
@@ -80,6 +80,7 @@ body {
     display: flex;
     justify-content: center;
     margin-bottom: 3rem;
+    z-index: 0;
 
     #cases {
       width: 80%;
@@ -87,9 +88,10 @@ body {
       align-items: center;
       justify-content: space-around;
       flex-wrap: wrap;
+      z-index: 2;
 
       .case {
-        margin-top: 3rem;
+        margin: 1rem;
         margin-bottom: 3rem;
         width: 20rem;
         background-color: #242448;
@@ -141,11 +143,17 @@ body {
         }
 
         p {
-          min-width: 20rem;
+          width: 90%;
           background-color: #36366d;
           padding: 0.5rem;
           border-radius: 0.5rem;
           text-align: center;
+        }
+
+        #back {
+          padding: 0.2rem;
+          min-width: 5rem;
+          left: -10rem;
         }
       }
 
@@ -159,21 +167,87 @@ body {
           background-color: #36366d;
           border-radius: 0.5rem;
           padding: 0.5rem;
-          min-width: 6rem;
+          min-width: 5rem;
           text-align: center;
         }
       }
 
-      #receipeIngredients {
-        min-width: 60%;
-        background-color: #36366d;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        text-align: center;
+      #receipeContent {
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        padding: 2rem;
+
+        #receipeIngredients {
+          width: 40%;
+          min-width: 11rem;
+          background-color: #36366d;
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+          text-align: center;
+        }
+
+        #receipeInstructions {
+          padding: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    header {
+      #titleHeader {
+        font-size: 1.3rem;
       }
 
-      #receipeInstructions {
-        padding: 2rem;
+      #buttonsHeader {
+        .buttonHeader {
+          padding: 0.3rem;
+          margin: 0.2rem;
+          margin-right: 0;
+        }
+      }
+    }
+
+    #content {
+      #cases {
+        width: 100%;
+
+        .case {
+          width: 18rem;
+
+          .imgCase {
+            width: 18rem;
+            height: 10rem;
+          }
+
+          .txtCase {
+            margin-top: -9.5rem;
+          }
+        }
+      }
+
+      #receipe {
+        width: 95%;
+
+        #receipeStat {
+          p {
+            padding: 0.2rem;
+            font-size: 0.7rem;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+          }
+        }
+
+        #receipeContent {
+          #receipeIngredients {
+            min-width: 15rem;
+          }
+        }
       }
     }
   }

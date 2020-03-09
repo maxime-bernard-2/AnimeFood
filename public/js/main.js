@@ -30,45 +30,53 @@
                                 '<p class="txtCase">' + item.origin + '</p> ' +
                             '</div> <p class="titleCase">' + item.name + '</p> ' +
                         '</div>').data('recetteId', item.recetteId));
-                })
+                });
 
                 $(".case").click(function() {
-
                     $.ajax({
                         url: 'model/getReceipe.php',
-                        method: 'POST',
+                        method: 'GET',
                         data: {recetteId: $(this).data('recetteId')}
+
                     }).done(function (data) {
-                        $('#cases').fadeTo("fast" , 0, function() {
-                            $('#cases').css('display', 'none');
-                            $('#content').append(
-                                '<div id="receipe">\n' +
-                                    '<div id="imageOrigin">\n' +
-                                        '<img src="' + data.imageLink + '">' +
-                                        '<p>' + data.origin + ': ' + data.name + '</p>\n' +
-                                    '</div>\n' +
-                                    '<div id="receipeStat">\n' +
-                                        '<p>Difficulté</p>\n' +
-                                        '<p>Temps</p>\n' +
-                                        '<p>Nb Personnes</p>\n' +
-                                    '</div>\n' +
-                                    '<div id="receipeIngredients">\n' +
-                                        '<p>gghrthrhrhrnnnr</p>\n' +
-                                        '<p>gghrthrhrhrnnnr</p>\n' +
-                                        '<p>gghrthrhrhrnnnr</p>\n' +
-                                    '</div>\n' +
-                                    '<div id="receipeInstructions">\n' +
-                                        '<p>1. gghrthrhrhrnnnr</p>\n' +
-                                        '<p>2. gghrthrhrhrnnnr</p>\n' +
-                                        '<p>3. gghrthrhrhrnnnr</p>\n' +
-                                    '</div>\n' +
-                                '</div>');
+                        $('#cases').fadeOut(100, function () {
+
+                            $.ajax({
+                                url: 'view/receipe_view.php',
+                            }).done(function(viewdata) {
+                                $("#content").append(viewdata);
+                                $('#imageOrigin').append('<img src="' + data.imageLink + '">')
+                                    .append('<p>' + data.origin + ': ' + data.name + '</p>\n');
+
+                                $('#receipeStat').append('<p>' + data.difficulty + '</p>\n')
+                                    .append('<p>' + data.time + '</p>\n')
+                                    .append('<p>Personnes: ' + data.number + '</p>\n');
+
+                                if(data.ingredients || data.instructions) {
+                                    data.ingredients.forEach(function (row) {
+                                        $('#receipeIngredients').append('<p>' + row.ingredient + ': ' + row.quantity + ' ' + row.unit + '</p>');
+                                    });
+
+                                    data.instructions.forEach(function (instruction, index) {
+                                        $('#receipeInstructions').append('<p>' + (index + 1) + '. ' + instruction + '</p>');
+                                    });
+                                }
+
+                                $('#back').click(function () {
+                                    $('#receipe').fadeOut(100, function () {
+                                        $(this).remove();
+                                        $('#cases').fadeIn(100);
+                                    });
+                                });
+
+                                $('#receipe').hide().fadeIn(100);
+                            });
                         });
+
                     }).fail(function () {
                         console.log('Affichage impossible !');
                     });
-
-                })
+                });
             } else {
                 console.log('Affichage de la recette impossible !');
             }

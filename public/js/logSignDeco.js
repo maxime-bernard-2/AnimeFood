@@ -14,7 +14,7 @@ let logSignStatus = "open";
                 logSignStatus = "open";
                 $("#logSign").css("right", "-18rem");
             }
-        })
+        });
 
         $("#deco").click(function() {
             $.ajax({
@@ -25,7 +25,7 @@ let logSignStatus = "open";
             }).fail(function () {
                 console.log('Deconnexion impossible !');
             });
-        })
+        });
 
         $('#logForm').submit(function () {
             let self = $(this);
