@@ -20,15 +20,12 @@ if(!empty($_POST['recetteId'])) {
 
     if ($reponse->rowCount() > 0) {
         foreach ($results as $row) {
-            $recette = new class {};
-
-            $recette->recetteId = $row['recette_id'];
-            $recette->name = $row['name'];
-            $recette->imageLink = $row['image_link'];
-            $recette->origin = $row['origin'];
-
-            $obj->recette[] = $recette;
+            $obj->recetteId = $row['recette_id'];
+            $obj->name = $row['name'];
+            $obj->imageLink = $row['image_link'];
+            $obj->origin = $row['origin'];
         }
+
     }
 }
 

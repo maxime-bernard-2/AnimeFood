@@ -33,11 +33,44 @@
                 })
 
                 $(".case").click(function() {
-                    console.log($(this).data('recetteId'));
-                })
 
+                    $.ajax({
+                        url: 'model/getReceipe.php',
+                        method: 'POST',
+                        data: {recetteId: $(this).data('recetteId')}
+                    }).done(function (data) {
+                        $('#cases').fadeTo("fast" , 0, function() {
+                            $('#cases').css('display', 'none');
+                            $('#content').append(
+                                '<div id="receipe">\n' +
+                                    '<div id="imageOrigin">\n' +
+                                        '<img src="' + data.imageLink + '">' +
+                                        '<p>' + data.origin + ': ' + data.name + '</p>\n' +
+                                    '</div>\n' +
+                                    '<div id="receipeStat">\n' +
+                                        '<p>Difficulté</p>\n' +
+                                        '<p>Temps</p>\n' +
+                                        '<p>Nb Personnes</p>\n' +
+                                    '</div>\n' +
+                                    '<div id="receipeIngredients">\n' +
+                                        '<p>gghrthrhrhrnnnr</p>\n' +
+                                        '<p>gghrthrhrhrnnnr</p>\n' +
+                                        '<p>gghrthrhrhrnnnr</p>\n' +
+                                    '</div>\n' +
+                                    '<div id="receipeInstructions">\n' +
+                                        '<p>1. gghrthrhrhrnnnr</p>\n' +
+                                        '<p>2. gghrthrhrhrnnnr</p>\n' +
+                                        '<p>3. gghrthrhrhrnnnr</p>\n' +
+                                    '</div>\n' +
+                                '</div>');
+                        });
+                    }).fail(function () {
+                        console.log('Affichage impossible !');
+                    });
+
+                })
             } else {
-                console.log('oops');
+                console.log('Affichage de la recette impossible !');
             }
         }).fail(function () {
             console.error('Une erreur critique est arrivée.');
