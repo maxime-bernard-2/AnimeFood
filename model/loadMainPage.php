@@ -3,6 +3,7 @@ session_start();
 
 $obj = new stdClass();
 $obj->success = false;
+$obj->message = "Validé !";
 
 try {
     $dsn = 'mysql:host=localhost;dbname=animtrqe_animefood';
