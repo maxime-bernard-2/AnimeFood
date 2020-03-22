@@ -9,10 +9,30 @@ let logSignStatus = "open";
             if(logSignStatus === "open") {
                 logSignStatus = "close";
                 $("#logSign").css("right", "0");
+                $("#logFormDiv").css("display", "block");
             }
             else {
                 logSignStatus = "open";
+                $(".message").text('');
                 $("#logSign").css("right", "-18rem");
+                $("#logFormDiv").css("display", "none");
+                $("#signFormDiv").css("display", "none");
+            }
+        });
+
+        $("#sign").click(function() {
+            if(logSignStatus === "open") {
+                logSignStatus = "close";
+                $("#logSign").css("right", "0");
+                $("#signFormDiv").css("display", "block");
+            }
+            else {
+                logSignStatus = "open";
+                $(".message").text('');
+                $("#logSign").css("right", "-18rem");
+                $("#formContent").remove();
+                $("#signFormDiv").css("display", "none");
+                $("#logFormDiv").css("display", "none");
             }
         });
 
@@ -27,8 +47,7 @@ let logSignStatus = "open";
             });
         });
 
-        $('#logForm').submit(function () {
-            let self = $(this);
+        $('.form').submit(function () {
             $.ajax({
                 url : $(this).attr('action'),
                 method : $(this).attr('method'),
@@ -37,7 +56,7 @@ let logSignStatus = "open";
                 if(data.success === true) {
                     window.location.href = 'index.php';
                 } else {
-                    $('#message').text(data.message);
+                    $('.message').text(data.message);
                 }
             }).fail(function () {
                 console.error('Une erreur critique est arrivée.');

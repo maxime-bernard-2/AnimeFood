@@ -54,7 +54,12 @@
 
                                 if(data.ingredients || data.instructions) {
                                     data.ingredients.forEach(function (row) {
-                                        $('#receipeIngredients').append('<p>' + row.ingredient + ': ' + row.quantity + ' ' + row.unit + '</p>');
+                                        if(row.quantity == 0) {
+                                            $('#receipeIngredients').append('<p>' + row.ingredient + '</p>');
+                                        }
+                                        else {
+                                            $('#receipeIngredients').append('<p>' + row.ingredient + ': ' + row.quantity + ' ' + row.unit + '</p>');
+                                        }
                                     });
 
                                     data.instructions.forEach(function (instruction, index) {

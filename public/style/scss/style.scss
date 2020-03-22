@@ -57,20 +57,24 @@ body {
     border-bottom-left-radius: 0.5rem;
     transition-duration: 0.5s;
 
-    #message {
-      color: red;
-      font-size: 0.9rem;
-    }
+    #logFormDiv, #signFormDiv {
+      display: none;
 
-    form {
-      display: flex;
-      flex-direction: column;
+      .message {
+        color: red;
+        font-size: 0.9rem;
+      }
 
-      input {
-        margin: 0.3rem;
-        padding: 0.3rem;
-        border-radius: 0.3rem;
-        border-style: none;
+      form {
+        display: flex;
+        flex-direction: column;
+
+        input {
+          margin: 0.3rem;
+          padding: 0.3rem;
+          border-radius: 0.3rem;
+          border-style: none;
+        }
       }
     }
   }
@@ -174,14 +178,13 @@ body {
 
       #receipeContent {
         width: 80%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
         padding: 2rem;
 
         #receipeIngredients {
           width: 40%;
+          float: right;
+          margin-left: 2rem;
+          margin-bottom: 3rem;
           min-width: 11rem;
           background-color: #36366d;
           padding: 0.5rem;

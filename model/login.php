@@ -18,7 +18,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
 
     $reponse = $bdd->prepare('SELECT * FROM user WHERE username = :username AND password = :password');
 
-    $reponse->execute(array(':username' => $_POST['username'], ':password' => $_POST['password']));
+    $reponse->execute(array(':username' => $_POST['username'], ':password' => sha1($_POST['password'])));
     $results = $reponse->fetchAll();
 
     if ($reponse->rowCount() > 0) {

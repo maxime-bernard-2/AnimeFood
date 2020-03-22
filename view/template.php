@@ -24,13 +24,27 @@
         </header>
 
         <div id="logSign">
-            <h2>Connexion</h2>
-            <p id="message"></p>
-            <form id="logForm" method="POST" action="model/login.php">
-                <input type="text" name="username" placeholder="Pseudo">
-                <input type="password" name="password" placeholder="Password">
-                <input type="submit" content="Submit">
-            </form>
+            <div id="logFormDiv">
+                <h2>Connexion</h2>
+                <p class="message"></p>
+                <form class="form" method="POST" action="model/login.php">
+                    <input type="text" name="username" placeholder="Pseudo">
+                    <input type="password" name="password" placeholder="Password">
+                    <input type="submit" content="Submit">
+                </form>
+            </div>
+            <div id="signFormDiv">
+                <h2>Inscription</h2>
+                <p class="message"></p>
+                <form class="form" method="GET" action="model/signUp.php">
+                    <input type="text" name="username" placeholder="Pseudo">
+                    <input type="email" name="email" placeholder="Email">
+                    <input type="password" name="password" placeholder="Mot de passe">
+                    <input type="password" name="rePassword" placeholder="Encore le mot de passe">
+                    <input type="submit" content="Submit">
+                </form>
+            </div>
+
         </div>
 
         <div id="content">
