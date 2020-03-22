@@ -16,8 +16,6 @@ $reponse = $bdd->prepare('SELECT * FROM recette');
 $reponse->execute();
 $results = $reponse->fetchAll();
 
-var_dump($results);
-
 if ($reponse->rowCount() > 0) {
     $obj->success =true;
 
