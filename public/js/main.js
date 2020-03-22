@@ -18,8 +18,7 @@
         });
 
         $.ajax({
-            url: 'model/loadMainPage.php',
-            method: 'get'
+            url: 'model/loadMainPage.php'
         }).done(function (data) {
             if(data.success === true) {
                 data.recette.forEach((item) => {
