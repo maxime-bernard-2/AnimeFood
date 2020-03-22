@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/animtrqe/public_html/
+    - /bin/cp -R view $DEPLOYPATH
+    - /bin/cp -R controler $DEPLOYPATH
+    - /bin/cp -R model $DEPLOYPATH
+    - /bin/cp -R public $DEPLOYPATH
+    - /bin/cp index.php $DEPLOYPATH
