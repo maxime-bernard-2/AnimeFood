@@ -4,7 +4,7 @@ session_start();
 $obj = new stdClass();
 
 try {
-    $dsn = 'mysql:host=localhost;dbname=animefood';
+    $dsn = 'mysql:host=localhost;dbname=animtrqe_animefood';
     $bdd = new PDO($dsn, 'root');
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage()); // pas sécurisé

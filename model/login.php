@@ -8,7 +8,7 @@ $obj->success = false;
 $obj->message = "Mauvais identifiant ou mot de passe";
 
 try {
-    $dsn = 'mysql:host=localhost;dbname=animefood';
+    $dsn = 'mysql:host=localhost;dbname=animtrqe_animefood';
     $bdd = new PDO($dsn, 'root');
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage()); // pas sécurisé
