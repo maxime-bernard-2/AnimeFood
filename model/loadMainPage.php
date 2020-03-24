@@ -17,12 +17,12 @@ $reponse = $bdd->prepare('SELECT * FROM recette');
 $reponse->execute();
 $results = $reponse->fetchAll();
 
-$recette = new class {};
-
 if ($reponse->rowCount() > 0) {
     $obj->success =true;
 
     foreach ($results as $row) {
+        $recette = new class {};
+
         $recette->recetteId = $row['recette_id'];
         $recette->name = $row['name'];
         $recette->imageLink = $row['image_link'];
