@@ -6,7 +6,7 @@ $obj->success = false;
 $obj->message = "Validé !";
 
 try {
-    $dsn = 'mysql:host=localhost;dbname=animtrqe_animefood';
+    $dsn = 'mysql:host=localhost;dbname=animtrqe_animefood;charset=utf8';
     $bdd = new PDO($dsn, 'animtrqe_access', 'Jaimelespates13200@');
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage()); // pas sécurisé
