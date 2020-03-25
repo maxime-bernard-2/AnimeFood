@@ -9,7 +9,7 @@
             src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
             crossorigin="anonymous"></script>
-        <script type="text/javascript" src="https://creativecouple.github.com/jquery-timing/jquery-timing.min.js"></script>
+        <script src="public/js/pluginAnimation.js"></script>
         <script src="public/js/logSignDeco.js"></script>
         <script src="public/js/main.js"></script>
     </head>
