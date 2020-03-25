@@ -28,7 +28,15 @@
                                 '<img class="imgCase" src="' + item.imageLink + '"> ' +
                                 '<p class="txtCase">' + item.origin + '</p> ' +
                             '</div> <p class="titleCase">' + item.name + '</p> ' +
-                        '</div>').data('recetteId', item.recetteId));
+                        '</div>').data('recetteId', item.recetteId)
+                            .css('opacity', 0)
+                    );
+                });
+
+                $('.case').each($).wait(100, function (index) {
+                    this.animate({
+                        opacity: 1
+                    }, 100);
                 });
 
                 $(".case").click(function() {
@@ -47,22 +55,46 @@
                                 $('#imageOrigin').append('<img src="' + data.imageLink + '">')
                                     .append('<p>' + data.origin + ': ' + data.name + '</p>\n');
 
-                                $('#receipeStat').append('<p>' + data.difficulty + '</p>\n')
-                                    .append('<p>' + data.time + '</p>\n')
-                                    .append('<p>Personnes: ' + data.number + '</p>\n');
+                                $('#receipeStat').append($('<p class="stat">' + data.difficulty + '</p>\n').css('opacity', 0))
+                                    .append($('<p class="stat">' + data.time + '</p>\n').css('opacity', 0))
+                                    .append($('<p class="stat">Personnes: ' + data.number + '</p>\n').css('opacity', 0));
+
+                                $('.stat').each($).wait(0, function (index) {
+                                    this.animate({
+                                        opacity: 1
+                                    }, 400);
+                                });
 
                                 if(data.ingredients || data.instructions) {
                                     data.ingredients.forEach(function (row) {
                                         if(row.quantity == 0) {
-                                            $('#receipeIngredients').append('<p>' + row.ingredient + '</p>');
+                                            $('#receipeIngredients').append($('<p class="ingredient">' + row.ingredient + '</p>')
+                                                .css('opacity', 0)
+                                            );
                                         }
                                         else {
-                                            $('#receipeIngredients').append('<p>' + row.ingredient + ': ' + row.quantity + ' ' + row.unit + '</p>');
+                                            $('#receipeIngredients').append($('<p class="ingredient">' + row.ingredient + ': ' + row.quantity + ' ' + row.unit + '</p>')
+                                                .css('opacity', 0)
+                                            );
                                         }
                                     });
 
+                                    $('.ingredient').each($).wait(100, function (index) {
+                                        this.animate({
+                                            opacity: 1
+                                        }, 100);
+                                    });
+
                                     data.instructions.forEach(function (instruction, index) {
-                                        $('#receipeInstructions').append('<p>' + (index + 1) + '. ' + instruction + '</p>');
+                                        $('#receipeInstructions').append($('<p class="instruction">' + (index + 1) + '. ' + instruction + '</p>')
+                                            .css('opacity', 0)
+                                        );
+                                    });
+
+                                    $('.instruction').each($).wait(100, function (index) {
+                                        this.animate({
+                                            opacity: 1
+                                        }, 100);
                                     });
                                 }
 

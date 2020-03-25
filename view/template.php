@@ -9,6 +9,7 @@
             src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
             crossorigin="anonymous"></script>
+        <script type="text/javascript" src="http://creativecouple.github.com/jquery-timing/jquery-timing.min.js"></script>
         <script src="public/js/logSignDeco.js"></script>
         <script src="public/js/main.js"></script>
     </head>
@@ -27,9 +28,9 @@
             <div id="logFormDiv">
                 <h2>Connexion</h2>
                 <p class="message"></p>
-                <form class="form" method="POST" action="model/login.php">
-                    <input type="text" name="username" placeholder="Pseudo">
-                    <input type="password" name="password" placeholder="Password">
+                <form class="form" method="POST" action="model/login.php" required>
+                    <input type="text" name="username" placeholder="Pseudo" required>
+                    <input type="password" name="password" placeholder="Password" required>
                     <input type="submit" content="Submit">
                 </form>
             </div>
@@ -37,10 +38,10 @@
                 <h2>Inscription</h2>
                 <p class="message"></p>
                 <form class="form" method="GET" action="model/signUp.php">
-                    <input type="text" name="username" placeholder="Pseudo">
-                    <input type="email" name="email" placeholder="Email">
-                    <input type="password" name="password" placeholder="Mot de passe">
-                    <input type="password" name="rePassword" placeholder="Encore le mot de passe">
+                    <input type="text" name="username" placeholder="Pseudo" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Mot de passe" required>
+                    <input type="password" name="rePassword" placeholder="Encore le mot de passe" required>
                     <input type="submit" content="Submit">
                 </form>
             </div>

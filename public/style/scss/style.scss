@@ -143,7 +143,7 @@ body {
 
         img {
           border-radius: 0.5rem;
-          width: 100%;
+          height: 20rem;
         }
 
         p {
@@ -200,7 +200,7 @@ body {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
   body {
     header {
       #titleHeader {
@@ -236,6 +236,12 @@ body {
 
       #receipe {
         width: 95%;
+
+        #imageOrigin {
+          img {
+            height: 9rem;
+          }
+        }
 
         #receipeStat {
           p {
