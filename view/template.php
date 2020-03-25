@@ -12,6 +12,7 @@
         <script src="public/js/pluginAnimation.js"></script>
         <script src="public/js/logSignDeco.js"></script>
         <script src="public/js/main.js"></script>
+        <script src="public/js/search.js"></script>
     </head>
     <body>
 
@@ -49,6 +50,10 @@
         </div>
 
         <div id="content">
+            <form id="searchForm">
+                <input type="text" size="30" placeholder="Rechercher..." onkeyup="showResult(this.value)">
+                <div id="livesearch"></div>
+            </form>
             <?php echo $content ?>
         </div>
 

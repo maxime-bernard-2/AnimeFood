@@ -1,6 +1,8 @@
 (function () {
+
     "use strict";
     $(() => {
+
         console.warn("Script main actif !");
 
         $.ajax({
@@ -17,7 +19,7 @@
             console.log('Connexion impossible !');
         });
 
-        $.ajax({
+        let loadMainPage = $.ajax({
             url: 'model/loadMainPage.php'
         }).done(function (data) {
             if(data.success === true) {
@@ -43,8 +45,9 @@
                     $.ajax({
                         url: 'model/getReceipe.php',
                         method: 'GET',
-                        data: {recetteId: $(this).data('recetteId')}
-
+                        data: {
+                            recetteId: $(this).data('recetteId')
+                        }
                     }).done(function (data) {
                         $('#cases').fadeOut(100, function () {
 
