@@ -12,7 +12,10 @@
             if (data) {
                 $('#log').css('display', 'none');
                 $('#sign').css('display', 'none');
+                $('#deco').css('display', 'flex');
             } else {
+                $('#log').css('display', 'flex');
+                $('#sign').css('display', 'flex');
                 $('#deco').css('display', 'none');
             }
         }).fail(function () {

@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 
 <html>
     <head>
         <title>Anime Food</title>
         <link rel="stylesheet" href="public/style/style.css">
         <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta name="viewport" content="width=device-width">
         <script
             src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -29,7 +30,7 @@
             <div id="logFormDiv">
                 <h2>Connexion</h2>
                 <p class="message"></p>
-                <form class="form" method="POST" action="model/login.php" required>
+                <form class="form" method="POST" action="model/login.php">
                     <input type="text" name="username" placeholder="Pseudo" required>
                     <input type="password" name="password" placeholder="Password" required>
                     <input type="submit" content="Submit">
