@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="fr">
     <head>
         <title>Anime Food</title>
         <link rel="stylesheet" href="public/style/style.css">
