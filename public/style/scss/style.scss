@@ -93,12 +93,27 @@ body {
     z-index: 0;
 
     #searchForm {
-      input {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+      margin-bottom: 1rem;
+
+      #searchBar {
         padding: 0.5rem;
         background-color: #333367;
         border-radius: 2rem;
         border-style: solid;
         border-color: #242448;
+        color: white;
+      }
+
+      #likedInput {
+        margin-left: 2rem;
+      }
+
+      label {
+        padding: 0.2rem;
       }
     }
 
@@ -127,10 +142,21 @@ body {
         .txtCase {
           position: absolute;
           margin-left: 0.5rem;
-          margin-top: -10rem;
+          margin-top: -10.5rem;
           z-index: 2;
           background-color: rgba(54, 54, 109, 0.77);
           padding: 0.5rem;
+          border-radius: 1rem;
+        }
+
+        .likeCase {
+          height: 2rem;
+          position: absolute;
+          margin-top: 0.5rem;
+          margin-left: -3.5rem;
+          z-index: 2;
+          background-color: rgba(54, 54, 109, 0.77);
+          padding: 0.3rem;
           border-radius: 1rem;
         }
 
@@ -151,6 +177,30 @@ body {
       justify-content: center;
       border-radius: 0.5rem;
 
+      #receipeButtons {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+
+        #backButton {
+          padding: 0.2rem;
+          min-width: 5rem;
+          max-width: 10rem;
+          left: -10rem;
+        }
+
+        #likeButton {
+          width: 10%;
+          height: 10%;
+          padding: 0.2rem;
+          min-width: 5rem;
+          left: -10rem;
+        }
+      }
+
       #imageOrigin {
         display: flex;
         flex-direction: column;
@@ -168,12 +218,6 @@ body {
           padding: 0.5rem;
           border-radius: 0.5rem;
           text-align: center;
-        }
-
-        #back {
-          padding: 0.2rem;
-          min-width: 5rem;
-          left: -10rem;
         }
       }
 

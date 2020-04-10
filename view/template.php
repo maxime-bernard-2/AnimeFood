@@ -11,9 +11,14 @@
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
             crossorigin="anonymous"></script>
         <script src="public/js/pluginAnimation.js"></script>
+        <script src="public/js/connectedOrNot.js"></script>
+        <script src="public/js/onlyLiked.js"></script>
+        <script src="public/js/like.js"></script>
+        <script src="public/js/cases.js"></script>
+        <script src="public/js/receipe.js"></script>
         <script src="public/js/logSignDeco.js"></script>
-        <script src="public/js/main.js"></script>
         <script src="public/js/search.js"></script>
+        <script src="public/js/main.js"></script>
     </head>
     <body>
 
@@ -52,8 +57,9 @@
 
         <div id="content">
             <form id="searchForm">
-                <input type="text" size="30" placeholder="Rechercher..." onkeyup="showResult(this.value)">
-                <div id="livesearch"></div>
+                <input type="text" id="searchBar" size="30" placeholder="Rechercher..." onkeyup="showResult(this.value)">
+                <input type="checkbox" class="liked" id="likedInput" name="liked" onclick="showOnlyLiked(this)">
+                <label for="liked" class="liked">Only liked</label>
             </form>
             <?php echo $content ?>
         </div>

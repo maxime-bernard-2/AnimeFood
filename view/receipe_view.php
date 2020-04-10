@@ -1,6 +1,10 @@
 <div id="receipe">
     <div id="imageOrigin">
-        <p id="back">Retour</p>
+        <div id="receipeButtons">
+            <p id="backButton">Retour</p>
+            <img id="likeButton" src="public/image/notlike.png">
+        </div>
+
     </div>
 
     <div id="receipeStat">
