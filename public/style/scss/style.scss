@@ -96,7 +96,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       margin-bottom: 1rem;
 
       #searchBar {
@@ -108,12 +108,19 @@ body {
         color: white;
       }
 
-      #likedInput {
-        margin-left: 2rem;
-      }
+      #checkBoxDiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
 
-      label {
-        padding: 0.2rem;
+        #likedInput {
+          margin-left: 2rem;
+        }
+
+        label {
+          padding: 0.2rem;
+        }
       }
     }
 
@@ -277,6 +284,20 @@ body {
     }
 
     #content {
+
+      #checkBoxDiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        #likedInput {
+          margin-left: 1rem;
+        }
+      }
+      
       #cases {
         width: 100%;
 

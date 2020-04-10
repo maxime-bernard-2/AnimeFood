@@ -58,8 +58,10 @@
         <div id="content">
             <form id="searchForm">
                 <input type="text" id="searchBar" size="30" placeholder="Rechercher..." onkeyup="showResult(this.value)">
-                <input type="checkbox" class="liked" id="likedInput" name="liked" onclick="showOnlyLiked(this)">
-                <label for="liked" class="liked">Only liked</label>
+                <div id="checkBoxDiv">
+                    <input type="checkbox" class="liked" id="likedInput" name="liked" onclick="showOnlyLiked(this)">
+                    <label for="liked" class="liked">Only liked</label>
+                </div>
             </form>
             <?php echo $content ?>
         </div>
