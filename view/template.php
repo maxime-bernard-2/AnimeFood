@@ -63,7 +63,9 @@
                     <label for="liked" class="liked">Only liked</label>
                 </div>
             </form>
+
             <?php echo $content ?>
+
         </div>
 
     </body>

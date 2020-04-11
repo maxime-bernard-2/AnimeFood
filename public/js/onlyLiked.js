@@ -21,5 +21,4 @@ function showOnlyLiked(checkbox) {
         $('#searchBar').prop('disabled', false);
         initCases()
     }
-
 }

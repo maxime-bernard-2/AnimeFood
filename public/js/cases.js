@@ -26,9 +26,7 @@ function showCases(data) {
                 '</div>').data('recetteId', item.recetteId)
                 .css('opacity', 0)
         );
-
         likeCaseChecker(item.recetteId);
-
     });
 
     // Execute cases apparition animation
@@ -38,7 +36,5 @@ function showCases(data) {
         }, 100);
     });
 
-    // When user click on a case
     showReceipe();
-
 }

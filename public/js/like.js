@@ -1,5 +1,4 @@
 function likeCaseChecker(receipeId) {
-
     $.ajax({
         url: 'model/likeCheck.php',
         method: 'get',
@@ -18,11 +17,9 @@ function likeCaseChecker(receipeId) {
     }).fail(function () {
         console.log('Attribution des likes a echoué !');
     });
-
 }
 
 function likeReceipeChecker(data) {
-
     $.ajax({
         url: 'model/likeCheck.php',
         method: 'get',
@@ -41,11 +38,9 @@ function likeReceipeChecker(data) {
     }).fail(function () {
         console.log('Attribution des likes a echoué !');
     });
-
 }
 
 function likeOrNot(data) {
-
     $('#likeButton').click(() => {
         $.ajax({
             url: 'model/like.php',
@@ -64,5 +59,4 @@ function likeOrNot(data) {
             console.log('Like impossible !');
         });
     })
-
 }
